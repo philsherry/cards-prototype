@@ -1,4 +1,4 @@
-.tile { 
+.cards { 
   border-collapse: separate;
   border-spacing: 20px;
   display: table;
@@ -11,7 +11,7 @@
     margin-top: 0;
   }
 
-  .tile-block {
+  .card-block {
     border: 1px solid #F0F0F0;
     display: table-cell;
     padding: 1.25em;
