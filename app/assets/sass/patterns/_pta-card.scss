@@ -38,6 +38,22 @@
     color: #fff;
     transition-delay: .25s;
   }
+
+  .status-low {
+    border: 1px solid #fff;
+    color: #fff;
+    transition-delay: .25s;
+  }
+
+  .status-high {
+    border: 1px solid #fff;
+    transition-delay: .25s;
+  }
+
+  .detail-large {
+    color: #fff;
+    transition-delay: .25s;
+  }
   
 }
 
@@ -58,6 +74,7 @@
     &:hover {
       color: #2e8aca;
     }
+    
     &:link,
     &:visited {
       color: #005EA5;
@@ -76,4 +93,41 @@
     }
 
   }
+}
+
+//Statuses
+.status {
+    color: #fff;
+    margin-bottom: 8px;
+    border-radius: 2px;
+    padding: 3px 6px 1px 6px;
+    transition: all .1s ease-in;
+}
+
+.status-low {
+  border: 1px solid #6F777B;
+  color: #0B0C0C;
+}
+
+
+.status-high {
+  border: 1px solid #005EA5;
+  background-color: #005EA5;
+}
+
+.status-med {
+  border: 1px solid #6F777B;
+  background-color: #6F777B;
+}
+
+.detail-large {
+  font-size: 32px;
+  color: #6F777B;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.detail {
+  font-weight: 600;
+  margin-bottom: 8px;
 }

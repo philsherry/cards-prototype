@@ -4,8 +4,14 @@
 
       {{ card.card(
         cardUrl="/pta-cards/v1",
-        heading="Card with cardURL",
+        heading="Card - Status Low",
+        status="status-low",
+        statusMessage="status low",
         linkContent = "Your income from employers and private pensions that is taxed before it is paid to you.",
+        details = [
+          { class: "detail-large", content: "£21,793" },
+          { class: "detail", content: "1150L"}
+        ],
         links = [
           { link: "/some-url", title: "View your Income Tax estimate" },
           { link: "/some-url-2", title: "Check how much tax you paid last"},
@@ -18,7 +24,10 @@
     <div class="column-one-third">
       
       {{ card.card(
-        heading="Card without cardURL",
+        cardUrl="/pta-cards/v1",
+        heading="Card - Status High",
+        status="status-high",
+        statusMessage="status high",
         linkContent = "Your income from employers.",
         links = [
           { link: "#", title: "Page link here" }
@@ -31,7 +40,9 @@
       
       {{ card.card(
         cardUrl="/pta-cards/v2",
-        heading="Card without action links",
+        heading="Card - Status Med",
+        status="status-med",
+        statusMessage="status med",
         linkContent = "Your income from employers and private pensions that is taxed before it is paid to you."
         )
       }}
