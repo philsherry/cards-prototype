@@ -1,7 +1,7 @@
 
-{% macro card(cardLinkClass, cardUrl, heading='heading', status, statusMessage, details, linkContent='Content here', links) %}
+{% macro card(cardStyle, cardLinkClass, cardUrl, heading='heading', status, statusMessage, details, linkContent='Content here', links) %}
 
-<div class="pta-card">
+<div class="pta-card {{ cardStyle }}">
   <div class="card-link {{ cardLinkClass }} {% if cardUrl %}active{% endif %}">
 
     {% if cardUrl %}

@@ -2,6 +2,10 @@
   font-size: 16px;
   border: 1px solid $grey-4;
   margin-bottom: 1em;
+
+  &.inactive {
+    color: #6F777B;
+  }
 }
 
 .card-heading {
@@ -71,13 +75,14 @@
     color: #005ea5;
     border-bottom: 1px solid #C7DCEB;
 
-    &:hover {
-      color: #2e8aca;
-    }
-    
     &:link,
     &:visited {
       color: #005EA5;
+    }
+
+    &:hover {
+      color: #2e8aca;
+      border-bottom: 1px solid #005EA5;
     }
   }
 

@@ -9,7 +9,10 @@ var card = (function () {
   //Capture when a user clicks
   $('.card-link').on('click', function() {
     var url = $(this).find('a').attr('href')
-    window.location.href = url
+    if(url !== undefined) {
+      window.location.href = url
+    }
+    
   })
 
   //Find the max-height for all cards
@@ -27,6 +30,5 @@ var card = (function () {
 
   setMaxheight('.pta-card')
   setMaxheight('.card-link')
-
 
 })()
