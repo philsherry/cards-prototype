@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Cards with link CTA - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-full">
+			<h1 class="heading-large">Cards using inline-block</h1>
+      <div class="cards-inline">
+        <div class="card-block">
+          <h2 class="heading-large"><a href="https://www.google.com">Cards Title</a></h2>
+          <p>Cards Content goes in here</p>
+        </div>
+        <div class="card-block" id="block-test">
+          <h2 class="heading-large"><a href="#">Cards Title</a></h2>
+          <p>Cards Content goes in here</p>
+          <p>Cards Content goes in here</p>
+          <p>Cards Content goes in here</p>
+          <p>Cards Content goes in here</p>
+        </div>
+      </div>
+      <div class="cards-inline">
+        <div class="card-block">
+          <h2 class="heading-large"><a href="#">Cards Title</a></h2>
+          <p>Cards Content goes in here</p>
+        </div>
+        <div class="card-block">
+          <h2 class="heading-large"><a href="#">Cards Title</a></h2>
+          <p>Cards Content goes in here</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
