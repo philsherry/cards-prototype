@@ -1,0 +1,38 @@
+
+{% macro card(cardStyle, cardLinkClass, cardUrl, heading='heading', status, statusMessage, details, linkContent='Content here', links) %}
+
+<div class="pta-card {{ cardStyle }}">
+  <div class="card-link {{ cardLinkClass }} {% if cardUrl %}active{% endif %}">
+
+    {% if cardUrl %}
+      <a href="{{cardUrl}}" class="heading-small card-heading">{{ heading }}</a>
+    {% else %}
+      <p class="heading-small card-heading">{{ heading }}</p>
+    {% endif %}
+
+    {% if status %} <div class="status {{ status }}"> {{ statusMessage }}</div>  {% endif %}
+
+    {% if details %}
+      {% for content in details %}
+        <div class="{{ content.class }}">{{ content.content }}</div>
+      {% endfor %}
+    {% endif %}
+
+    <p>{{ linkContent }}</p>
+  </div>
+
+  
+    {% if links %}
+    <div class="card-action">
+    <ul>
+      {% for link in links %}
+      <li><a href= {{ link.url }}>{{ link.title }}</a></li>
+      {% endfor %}
+    </ul>
+    </div>
+    {% endif %}
+
+  
+</div>
+
+{% endmacro %}

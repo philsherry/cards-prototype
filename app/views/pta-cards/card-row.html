@@ -1,0 +1,45 @@
+<div class="grid-row form-group">
+
+    <div class="column-one-third">
+
+      {{ card.card(
+        cardUrl="/pta-cards/v1",
+        heading="Card with cardURL",
+        linkContent = "Your income from employers and private pensions that is taxed before it is paid to you.",
+        links = [
+            { link: "/some-url", title: "View your Income Tax estimate" },
+            { link: "/some-url-2", title: "Check how much tax you paid last"},
+            { link: "/some-url-3", title: "Understand your tax code"}
+          ]
+      )}}
+
+    </div>
+
+    <div class="column-one-third">
+      
+      {{ card.card(
+        heading="Card without cardURL",
+        linkContent = "Your income from employers.",
+        links = [
+          { link: "#", title: "Page link here" }
+        ]
+      )}}
+
+    </div>
+
+    <div class="column-one-third">
+      
+      {{ card.card(
+        cardStyle="inactive",
+        heading="Inactive card",
+        linkContent = "Your income from employers and private pensions that is taxed before it is paid to you.",
+        links = [
+            { link: "/some-url", title: "View your Income Tax estimate" },
+            { link: "/some-url-2", title: "Check how much tax you paid last"},
+            { link: "/some-url-3", title: "Understand your tax code"}
+          ]
+      )}}
+
+    </div>
+
+  </div>

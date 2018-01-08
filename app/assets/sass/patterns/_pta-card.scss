@@ -1,0 +1,150 @@
+.pta-card {
+  font-size: 16px;
+  border: 1px solid #F0F0F0;
+  margin-bottom: 1em;
+
+  &.inactive {
+    color: #6F777B;
+  }
+}
+
+.card-heading {
+  margin-top: 0;
+}
+
+.card-link {
+  padding: 12px;
+  border-bottom: 1px solid #F0F0F0;
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+
+}
+
+.card-link.active {
+  background-color: $grey-4;
+  transition: all .1s ease-in-out;
+
+  .card-heading {
+    margin-top: 0;
+    color: #005EA5;
+  }
+}
+
+//Now we want to:
+//Change the background-color
+//Change the font-color
+
+.card-link.active:hover {
+  color: #fff;
+  background-color: #005EA5;
+  transition: all .1s ease-in-out;
+  transition-delay: .25s;
+  cursor: pointer;
+
+  .card-heading {
+    color: #fff;
+    transition-delay: .25s;
+  }
+
+  .status-low {
+    border: 1px solid #fff;
+    color: #fff;
+    transition-delay: .25s;
+  }
+
+  .status-med {
+    border: 1px solid #fff;
+    background-color: #005EA5;
+    color: #fff;
+    transition-delay: .25s;
+  }
+
+  .status-high {
+    border: 1px solid #fff;
+    transition-delay: .25s;
+  }
+
+  .detail-large {
+    color: #fff;
+    transition-delay: .25s;
+  }
+  
+}
+
+.card-link.active a{
+  display: inline-block;
+  text-decoration: none;
+}
+
+.card-action {
+  border-top: 0;
+  padding: 12px;
+
+  a {
+    text-decoration: none;
+    color: #005ea5;
+    border-bottom: 1px solid #C7DCEB;
+
+    &:link,
+    &:visited {
+      color: #005EA5;
+    }
+
+    &:hover {
+      color: #2e8aca;
+      border-bottom: 1px solid #005EA5;
+    }
+  }
+
+  ul {
+    margin: 0;
+
+    li {
+      margin: 0 0 1em;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+  }
+}
+
+//Statuses
+.status {
+    color: #fff;
+    margin-bottom: 8px;
+    border-radius: 2px;
+    padding: 3px 6px 1px 6px;
+    transition: all .1s ease-in;
+}
+
+.status-low {
+  border: 1px solid #6F777B;
+  color: #0B0C0C;
+}
+
+
+.status-high {
+  border: 1px solid #005EA5;
+  background-color: #005EA5;
+}
+
+.status-med {
+  border: 1px solid #6F777B;
+  background-color: #6F777B;
+}
+
+.detail-large {
+  font-size: 32px;
+  color: #6F777B;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.detail {
+  font-weight: 600;
+  margin-bottom: 8px;
+}

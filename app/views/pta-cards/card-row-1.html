@@ -1,0 +1,52 @@
+<div class="grid-row form-group">
+
+    <div class="column-one-third">
+
+      {{ card.card(
+        cardUrl="/pta-cards/v1",
+        heading="Card - Status Low",
+        status="status-low",
+        statusMessage="status low",
+        linkContent = "Your income from employers and private pensions that is taxed before it is paid to you.",
+        details = [
+          { class: "detail-large", content: "£21,793" },
+          { class: "detail", content: "1150L"}
+        ],
+        links = [
+          { link: "/some-url", title: "View your Income Tax estimate" },
+          { link: "/some-url-2", title: "Check how much tax you paid last"},
+          { link: "/some-url-3", title: "Understand your tax code"}
+        ])
+      }}
+
+    </div>
+
+    <div class="column-one-third">
+      
+      {{ card.card(
+        cardUrl="/pta-cards/v2",
+        heading="Card - Status Med",
+        status="status-med",
+        statusMessage="status med",
+        linkContent = "Your income from employers and private pensions that is taxed before it is paid to you."
+        )
+      }}
+
+    </div>
+
+    <div class="column-one-third">
+      
+      {{ card.card(
+        cardUrl="/pta-cards/v1",
+        heading="Card - Status High",
+        status="status-high",
+        statusMessage="status high",
+        linkContent = "Your income from employers.",
+        links = [
+          { link: "#", title: "Page link here" }
+        ])
+      }}
+
+    </div>
+
+  </div>
