@@ -36,7 +36,7 @@
 //Change the background-color
 //Change the font-color
 
-.card-link.active:hover {
+.js .card-link.active:hover {
   color: #fff;
   background-color: #005EA5;
   transition: all .1s ease-in-out;
@@ -75,6 +75,9 @@
 
 .card-link.active a{
   display: inline-block;
+}
+
+.js .card-link.active a{
   text-decoration: none;
 }
 
