@@ -1,6 +1,6 @@
 .pta-card {
   font-size: 16px;
-  border: 1px solid $grey-4;
+  border: 1px solid #F0F0F0;
   margin-bottom: 1em;
 
   &.inactive {
@@ -14,7 +14,12 @@
 
 .card-link {
   padding: 12px;
-  border-bottom: 1px solid $grey-4;
+  border-bottom: 1px solid #F0F0F0;
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+
 }
 
 .card-link.active {
@@ -45,6 +50,13 @@
 
   .status-low {
     border: 1px solid #fff;
+    color: #fff;
+    transition-delay: .25s;
+  }
+
+  .status-med {
+    border: 1px solid #fff;
+    background-color: #005EA5;
     color: #fff;
     transition-delay: .25s;
   }

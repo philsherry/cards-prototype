@@ -24,6 +24,19 @@
     <div class="column-one-third">
       
       {{ card.card(
+        cardUrl="/pta-cards/v2",
+        heading="Card - Status Med",
+        status="status-med",
+        statusMessage="status med",
+        linkContent = "Your income from employers and private pensions that is taxed before it is paid to you."
+        )
+      }}
+
+    </div>
+
+    <div class="column-one-third">
+      
+      {{ card.card(
         cardUrl="/pta-cards/v1",
         heading="Card - Status High",
         status="status-high",
@@ -32,19 +45,6 @@
         links = [
           { link: "#", title: "Page link here" }
         ])
-      }}
-
-    </div>
-
-    <div class="column-one-third">
-      
-      {{ card.card(
-        cardUrl="/pta-cards/v2",
-        heading="Card - Status Med",
-        status="status-med",
-        statusMessage="status med",
-        linkContent = "Your income from employers and private pensions that is taxed before it is paid to you."
-        )
       }}
 
     </div>

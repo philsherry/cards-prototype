@@ -4,8 +4,11 @@
 
       {{ card.card(
         cardUrl="/pta-cards/v1",
-        heading="Card with cardURL",
-        linkContent = "Your income from employers and private pensions that is taxed before it is paid to you.",
+        heading="Card with detail",
+        linkContent = "Description",
+        details = [
+          { class: "detail", content: "Detail"}
+        ],
         links = [
           { link: "/some-url", title: "View your Income Tax estimate" },
           { link: "/some-url-2", title: "Check how much tax you paid last"},
@@ -18,10 +21,17 @@
     <div class="column-one-third">
       
       {{ card.card(
-        heading="Card without cardURL",
-        linkContent = "Your income from employers.",
+        cardUrl="/pta-cards/v1",
+        heading="Card with detail",
+        linkContent = "Description",
+        details = [
+          { class: "detail-large", content: "Large detail"},
+          { class: "detail", content: "Detail"}
+        ],
         links = [
-          { link: "#", title: "Page link here" }
+          { link: "/some-url", title: "View your Income Tax estimate" },
+          { link: "/some-url-2", title: "Check how much tax you paid last"},
+          { link: "/some-url-3", title: "Understand your tax code"}
         ])
       }}
 

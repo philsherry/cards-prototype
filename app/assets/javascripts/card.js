@@ -31,4 +31,22 @@ var card = (function () {
   setMaxheight('.pta-card')
   setMaxheight('.card-link')
 
+  //Check each card. If the card does not contain a .card-action
+  //make .card-link full height
+  function fullHeight() {
+    var cardEle = $('.pta-card').not(':has(.card-action)')
+    cardEle.each(function() {
+      var height = cardEle.height()
+      var paddingTop = $(this).children('.card-link').css('padding-top').replace("px", "")
+      var paddingBottom = $(this).children('.card-link').css('padding-bottom').replace("px", "")
+      var totalHeight = height - paddingTop - paddingBottom
+      $(this).children('.card-link').height(totalHeight)
+    })
+
+    
+  }
+
+  fullHeight()
+
+
 })()
