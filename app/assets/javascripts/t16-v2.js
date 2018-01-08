@@ -1,4 +1,4 @@
-var card = (function () {
+(function () {
   var heights = $(".card-block").map(function() {
     return $(this).height();
   }).get(),
