@@ -1,11 +1,8 @@
-//Every time a user mouse enters a card, return that card
-
-//Now we want to:
-//Change the background-color
-//Change the font-color
 
 var card = (function () {
 
+  //Add active class to PTA card for interaction
+  $('.pta-card').addClass('js')
   //Capture when a user clicks
   $('.card-link').on('click', function() {
     var url = $(this).find('a').attr('href')
@@ -28,9 +25,24 @@ var card = (function () {
     $(ele).height(maxHeight)
   }
 
-  setMaxheight('.pta-card')
-  setMaxheight('.card-link')
+  function resetHeight(ele) {
+    $(ele).height('')
+  }
 
+  //We only want to set the height for tablets and higher.
+  checkSize()
+  // run test on resize of the window
+  $(window).resize(checkSize);
+  function checkSize(){
+    //remove any sizes
+    resetHeight('.pta-card')
+    resetHeight('.card-link')
+    if($('.column-one-third').css('float') == 'left') {
+      setMaxheight('.pta-card')
+      setMaxheight('.card-link')
+    }
+  }
+  
   //Check each card. If the card does not contain a .card-action
   //make .card-link full height
   function fullHeight() {
@@ -43,10 +55,8 @@ var card = (function () {
       $(this).children('.card-link').height(totalHeight)
     })
 
-    
   }
 
   fullHeight()
-
 
 })()
