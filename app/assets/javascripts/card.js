@@ -22,6 +22,7 @@ var card = (function () {
     })
 
     var maxHeight = height.sort(function(a, b){return b-a})[0]
+    //console.log(maxHeight)
     $(ele).height(maxHeight)
   }
 
@@ -37,14 +38,19 @@ var card = (function () {
     //remove any sizes
     resetHeight('.pta-card')
     resetHeight('.card-link')
-    if($('.column-one-third').css('float') == 'left') {
+    //flex-basis: 100%;
+    //if($('.column-one-third').css('float') == 'left') {
+    if($('.pta-card').css('flex-basis') != '100%') {
       setMaxheight('.pta-card')
       setMaxheight('.card-link')
     }
   }
+  //resetHeight('.pta-card')
+  //resetHeight('.card-link')
   
   //Check each card. If the card does not contain a .card-action
   //make .card-link full height
+  //$(window).resize(fullHeight);
   function fullHeight() {
     var cardEle = $('.pta-card').not(':has(.card-action)')
     cardEle.each(function() {
