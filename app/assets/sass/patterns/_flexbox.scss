@@ -1,0 +1,26 @@
+.flex-contianer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.pta-card {
+  float: left; //IE
+  flex-grow: 0;
+  flex-basis: 100%;
+}
+
+@media screen and (min-width:600px) {
+  .pta-card {
+    width: 49%; //IE
+    flex-basis: 49%;
+  }
+}
+
+@media screen and (min-width:900px) {
+  .pta-card {
+    width: 32%; //IE
+    flex-basis: 32%;
+  }
+}
