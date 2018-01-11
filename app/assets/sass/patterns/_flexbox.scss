@@ -10,25 +10,25 @@
   padding: 0 15px;
 }
 
-.pta-card {
+.card {
   flex-grow: 0;
   flex-basis: 100%;
 }
 
 @media screen and (min-width:600px) {
-  .pta-card {
+  .card {
     flex-basis: 49%;
   }
 }
 
 @media screen and (min-width:900px) {
-  .pta-card {
+  .card {
     flex-basis: 32%;
   }
 }
 
 html[data-useragent*='MSIE 10.0'] .flex-container {
-  .pta-card {
+  .card {
     margin: 10px;
     width: 31%;
   }

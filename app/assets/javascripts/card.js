@@ -1,10 +1,7 @@
 
 var card = (function () {
-
-  // Add active class to PTA card for interaction
-  $('.pta-card').addClass('js')
   // Capture when a user clicks
-  $('.card-link').on('click', function () {
+  $('.card-body').on('click', function () {
     var url = $(this).find('a').attr('href')
     if (url !== undefined) {
       window.location.href = url
@@ -34,29 +31,29 @@ var card = (function () {
   $(window).resize(checkSize)
   function checkSize () {
     // remove any sizes
-    resetHeight('.pta-card')
-    resetHeight('.card-link')
-    // flex-basis: 100%;
+    resetHeight('.card')
+    resetHeight('.card-body')
     if (navigator.appVersion.indexOf('MSIE 10') === -1) {
       console.log('not ie')
-      if ($('.pta-card').css('flex-basis') !== '100%') {
-        setMaxheight('.pta-card')
-        setMaxheight('.card-link')
+      if ($('.card').css('flex-basis') !== '100%') {
+        setMaxheight('.card')
+        setMaxheight('.card-body')
       }
     }
   }
-  // resetHeight('.pta-card')
-  // resetHeight('.card-link')
+
+  // resetHeight('.card')
+  // resetHeight('.card-body')
   // Check each card. If the card does not contain a .card-action
-  // make .card-link full height
+  // make .card-body full height
   function fullHeight () {
-    var cardEle = $('.pta-card').not(':has(.card-action)')
+    var cardEle = $('.card').not(':has(.card-action)')
     cardEle.each(function () {
       var height = cardEle.height()
-      var paddingTop = $(this).children('.card-link').css('padding-top').replace('px', '')
-      var paddingBottom = $(this).children('.card-link').css('padding-bottom').replace('px', '')
+      var paddingTop = $(this).children('.card-body').css('padding-top').replace('px', '')
+      var paddingBottom = $(this).children('.card-body').css('padding-bottom').replace('px', '')
       var totalHeight = height - paddingTop - paddingBottom
-      $(this).children('.card-link').height(totalHeight)
+      $(this).children('.card-body').height(totalHeight)
     })
   }
 
