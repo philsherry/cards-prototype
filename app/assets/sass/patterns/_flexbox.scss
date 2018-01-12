@@ -6,31 +6,51 @@
   flex-direction: row;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 0 15px;
 }
 
 .card {
   flex-grow: 0;
   flex-basis: 100%;
+  margin-bottom: 4%;
 }
 
 @media screen and (min-width:600px) {
   .card {
-    flex-basis: 49%;
+    flex-basis: 45.99%;
+    // Every card in the first row needs horizontal margin
+    &:nth-child(2n-1) {
+      margin-right: 3%;
+    }
+    // Every card in the second row needs horizontal margin
+    &:nth-child(2n-2) {
+      margin-left: 3%;
+    }
   }
 }
 
 @media screen and (min-width:900px) {
   .card {
-    flex-basis: 32%;
+    flex-basis: 31%;
+
+    &:nth-child(2n-1),
+    &:nth-child(2n-2) {
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    &:nth-child(3n-1) {
+      margin-left: 3%;
+      margin-right: 3%;
+    }
   }
 }
 
 html[data-useragent*='MSIE 10.0'] .flex-container {
   .card {
-    margin: 10px;
-    width: 31%;
+    flex-basis: 31%;
+    margin: 3%;
   }
 }
 

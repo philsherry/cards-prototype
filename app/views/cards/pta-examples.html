@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  PTA Cards - GOV.UK
+{% endblock %}
+
+{% import "../cards/card.4.html" as card %}
+
+{% block content %}
+
+<main id="content" role="main">
+  
+  <div class="grid-row">
+    <div class="column-two-thirds">
+			<h1 class="heading-xlarge">PTA Card Examples</h1>
+      <p class="lede">Flexbox layout</p>
+    </div>
+  </div>
+
+  {% include "../cards/card-row-pta.html" %}
+
+  <div class="grid-row">
+    <div class="column-full form-group">
+      <a href="/">< Back</a>
+    </div>
+  </div>
+
+</main>
+
+
+{% endblock %}
