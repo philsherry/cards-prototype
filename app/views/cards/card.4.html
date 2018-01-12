@@ -1,24 +1,25 @@
 
-{% macro card(cardStyle, cardLinkClass, cardUrl, heading='heading', status, statusMessage, details, linkContent='Content here', links) %}
+{% macro card(cardStyle, cardLinkClass, cardUrl, headingLevel="h2", heading, statusClass, statusMessage, details, linkContent, links) %}
 
 <div class="card {{ cardStyle }}">
   <div class="card-body {{ cardLinkClass }} {% if cardUrl %}active{% endif %}">
 
     {% if cardUrl %}
-      <a href="{{cardUrl}}" class="heading-small card-heading">{{ heading }}</a>
+      <{{headingLevel}} class="heading-small card-heading"><a href="{{cardUrl}}">{{ heading }}</a></{{headingLevel}}>
     {% else %}
-      <p class="heading-small card-heading">{{ heading }}</p>
+      <{{headingLevel}} class="heading-small card-heading">{{ heading }}</{{headingLevel}}>
     {% endif %}
 
-    {% if status %} <div class="status {{ status }}"> {{ statusMessage }}</div>  {% endif %}
+    {% if statusClass %} <div class="status {{ statusClass }}"> {{ statusMessage }}</div>  {% endif %}
 
     {% if details %}
       {% for content in details %}
         <div class="{{ content.class }}">{{ content.content }}</div>
       {% endfor %}
     {% endif %}
-
-    <p>{{ linkContent }}</p>
+    {% if linkContent %}
+      <p>{{ linkContent }}</p>
+    {% endif %}
   </div>
 
   
