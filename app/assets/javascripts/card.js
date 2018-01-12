@@ -9,53 +9,57 @@ var card = (function () {
     }
   })
 
-  // Find the max-height for all cards
-  // Get collection of all cards
-  function setMaxheight (ele) {
-    var height = []
+  var checkSize = function () {
+    var maxHeight = getMaxHeight('.card-body')
+    setMaxheight('.card-body', maxHeight)
+  }
 
-    $(ele).each(function () {
-      height.push($(this).height())
+  // Check each card. If the card does not contain a .card-action
+  // make .card-body full height
+  var fullHeight = function () {
+    var cardEle = $('.card').not(':has(.card-action)')
+    cardEle.each(function () {
+      var $cardBody = $(this).children('.card-body')
+      var maxHeight = getMaxHeight('.card')
+      var paddingTop = $cardBody.css('padding-top').replace('px', '')
+      var paddingBottom = $cardBody.css('padding-bottom').replace('px', '')
+      var totalHeight = maxHeight - paddingTop - paddingBottom
+      $cardBody.css('border-bottom', '0')
+      setMaxheight($cardBody, totalHeight)
     })
+  }
 
-    var maxHeight = height.sort(function (a, b) { return b - a })[0]
+  isNotMobile(checkSize)
+  $(window).resize(isNotMobile(checkSize))
+
+  isNotMobile(fullHeight)
+  $(window).resize(isNotMobile(fullHeight))
+
+  // set max height for any collection of elements
+  function setMaxheight (ele, maxHeight) {
     $(ele).height(maxHeight)
   }
 
-  function resetHeight (ele) {
-    $(ele).height('')
+  // get max height for any collection of elements
+  function getMaxHeight (ele) {
+    var height = []
+    $(ele).each(function () {
+      height.push($(this).height())
+    })
+    var maxHeight = height.sort(function (a, b) { return b - a })[0]
+    return maxHeight
   }
-
-  // We only want to set the height for tablets and higher.
-  checkSize()
-  // run test on resize of the window
-  $(window).resize(checkSize)
-
-  function checkSize () {
-    // remove any sizes
-    resetHeight('.card')
-    resetHeight('.card-body')
+  
+  // Only run fucntion if the screen size is not mobile.
+  function isNotMobile (func) {
     if (navigator.appVersion.indexOf('MSIE 10') === -1) {
+      
       if ($('.card').css('flex-basis') !== '100%') {
-        setMaxheight('.card-body')
+        return func()
       }
     }
   }
-  
-  // Check each card. If the card does not contain a .card-action
-  // make .card-body full height
-  function fullHeight () {
-    var cardEle = $('.card').not(':has(.card-action)')
-    cardEle.each(function () {
-      var height = cardEle.height()
-      var paddingTop = $(this).children('.card-body').css('padding-top').replace('px', '')
-      var paddingBottom = $(this).children('.card-body').css('padding-bottom').replace('px', '')
-      var totalHeight = height - paddingTop - paddingBottom
-      $(this).children('.card-body').height(totalHeight)
-    })
-  }
 
-  fullHeight()
 })()
 
 var doc = document.documentElement
