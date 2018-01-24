@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  PTA Cards - GOV.UK
+{% endblock %}
+
+{% import "../cards/card.4.html" as card %}
+
+{% block content %}
+
+<main id="content" role="main">
+  
+  <div class="grid-row">
+    <div class="column-two-thirds">
+			<h1 class="heading-xlarge">PTA Home Page Card Examples</h1>
+    </div>
+  </div>
+
+  <h2 class="heading-large">Income</h2>
+
+  {% include "../cards/card-row-pta-home-1.html" %}
+
+  <h2 class="heading-large">Benefits</h2>
+
+  {% include "../cards/card-row-pta-home-2.html" %}
+
+  <h2 class="heading-large">Pensions</h2>
+
+  {% include "../cards/card-row-pta-home-3.html" %}
+
+  <div class="grid-row">
+    <div class="column-full form-group">
+      <a href="/">< Back</a>
+    </div>
+  </div>
+
+</main>
+
+
+{% endblock %}
