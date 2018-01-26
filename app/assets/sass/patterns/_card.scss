@@ -1,6 +1,5 @@
 .card {
   border: 1px solid $panel-colour;
-  font-size: 16px;
 
   &.inactive {
     color: $secondary-text-colour;
@@ -52,8 +51,7 @@
     }
 
     .detail-large {
-      color: $secondary-text-colour;
-      font-size: 32px;
+      font-size: 48px;
       font-weight: 600;
       margin-bottom: 8px;
     }

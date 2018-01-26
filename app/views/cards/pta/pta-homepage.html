@@ -4,7 +4,7 @@
   PTA Cards - GOV.UK
 {% endblock %}
 
-{% import "../cards/card.4.html" as card %}
+{% import "../../cards/card-template.html" as card %}
 
 {% block content %}
 
@@ -18,15 +18,15 @@
 
   <h2 class="heading-large">Income</h2>
 
-  {% include "../cards/card-row-pta-home-1.html" %}
+  {% include "../pta/includes/card-row-pta-home-1.html" %}
 
   <h2 class="heading-large">Benefits</h2>
 
-  {% include "../cards/card-row-pta-home-2.html" %}
+  {% include "../pta/includes/card-row-pta-home-2.html" %}
 
   <h2 class="heading-large">Pensions</h2>
 
-  {% include "../cards/card-row-pta-home-3.html" %}
+  {% include "../pta/includes/card-row-pta-home-3.html" %}
 
   <div class="grid-row">
     <div class="column-full form-group">

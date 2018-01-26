@@ -1,10 +1,10 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  PTA Cards - GOV.UK
+  Taxcalc cards - GOV.UK
 {% endblock %}
 
-{% import "../cards/card.4.html" as card %}
+{% import "../../cards/card-template.html" as card %}
 
 {% block content %}
 
@@ -12,12 +12,11 @@
   
   <div class="grid-row">
     <div class="column-two-thirds">
-			<h1 class="heading-xlarge">PTA Card - Version 4</h1>
-      <p class="lede">Create JavaScript - Layout</p>
+			<h1 class="heading-xlarge">Choose which year to view</h1>
     </div>
   </div>
 
-  {% include "../cards/card-row-1-flexbox.html" %}
+  {% include "../taxcalc/includes/card-taxcalc-dashboard.html" %}
 
   <div class="grid-row">
     <div class="column-full form-group">
